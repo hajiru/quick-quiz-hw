@@ -101,12 +101,13 @@ choices.forEach(choice => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
 
+    // Will apply appropriate classes to the user's choice //
     let classToApply = "incorrect";
     if (selectedAnswer == currentQuestion.answer) {
       classToApply = "correct";
     };
 
-    // Will apply colored background from css to show visually if correct or incorrect //
+    // Will apply colored background from game css to show visually if correct or incorrect //
     selectedChoice.parentElement.classList.add(classToApply);
 
     // Function to remove applied class then get new question //
