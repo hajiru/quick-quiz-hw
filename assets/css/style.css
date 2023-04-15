@@ -90,6 +90,7 @@ h3 {
   border-radius: 2rem;
 }
 
+/* gives a glow look to buttons when hovering */
 .btn:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem var(--coralFontColor);
