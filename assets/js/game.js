@@ -71,7 +71,7 @@ getNewQuestion = () => {
 
   // Will bring user to score screen when there are no more questions //
   if(availableQuestions.length === 0 || questionCounter >= max_questions){
-    return window.location.assign('./end.html');
+    return window.location.assign('/end.html');
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);

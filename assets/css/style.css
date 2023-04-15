@@ -103,3 +103,10 @@ h3 {
   box-shadow: none;
   transform: none;
 }
+
+/* Form things */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
