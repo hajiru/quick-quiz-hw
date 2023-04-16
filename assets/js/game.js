@@ -52,6 +52,7 @@ let questions = [
   }
 ];
 
+const correct_bonus = 5;
 const max_questions = 5;
 
 // Function to start quiz //
@@ -103,10 +104,13 @@ choices.forEach(choice => {
     const selectedAnswer = selectedChoice.dataset["number"];
 
     // Will apply appropriate classes to the user's choice //
-    let classToApply = "incorrect";
-    if (selectedAnswer == currentQuestion.answer) {
-      classToApply = "correct";
-    };
+    const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+    // Adds up the score if the answer is correct //
+    if (classToApply === "correct") {
+      incrementScore(correct_bonus);
+    }
 
     // Will apply colored background from game css to show visually if correct or incorrect //
     selectedChoice.parentElement.classList.add(classToApply);
@@ -119,6 +123,12 @@ choices.forEach(choice => {
 
   });
 });
+
+// Display score of user //
+incrementScore = num => {
+  score += num;
+  scoreText.innerText = score;
+}
 
 // Calls startGame function //
 startGame();
