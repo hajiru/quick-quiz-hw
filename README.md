@@ -2,20 +2,16 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+Just a little pokemon quiz that helped me learn more about HTML, CSS and especially JavaScript since I was a bit more weak in it than HTML and CSS. Going through the refrence 
+really helped me understand JavaScript a bit more.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Use buttons to navigate to quiz or high score.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Link to my deployed page: https://hajiru.github.io/quick-quiz-hw/
 
-![alt text](assets/images/screenshot.png)
+![alt text](assets/images/poke-quiz.png)
 
 ## Credits
 
