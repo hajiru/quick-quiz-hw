@@ -36,7 +36,7 @@ let questions = [
     answer: 3
   },
   {
-    question: "What is my favorite pokemon?",
+    question: "What is my favorite pokemon? (Hint: It's a ghost type.)",
     choice1: "Typhlosion",
     choice2: "Dragapult",
     choice3: "Charizard",
