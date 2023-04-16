@@ -1,6 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const scoreText = document.getElementById("score");
+const countdown = document.getElementById("timerCount");
 
 // Variables to hold and find questions //
 let currentQuestion = {};
@@ -8,6 +9,9 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let timer = 0;
+let timerCount = 60;
+let interval = setInterval(startTime, 1000);
 
 // Questions held as objects //
 let questions = [
@@ -58,6 +62,7 @@ const max_questions = 5;
 
 // Function to start quiz //
 startGame = () => {
+  timerCount = 60;
   questionCounter = 0;
   score = 0;
 
@@ -66,6 +71,16 @@ startGame = () => {
 
   // Calls getNewQuestion function to get new questions //
   getNewQuestion();
+};
+
+// Function to stop timer to go negative //
+function startTime() {
+  timer++;
+  countdown.innerHTML = convertSeconds(timerCount - timer);
+
+  if (timer == timerCount) {
+    clearInterval(interval);
+  };
 };
 
 // Function to get a random new question from question array //
@@ -113,6 +128,10 @@ choices.forEach(choice => {
       incrementScore(correct_bonus);
     }
 
+    if (classToApply == "incorrect") {
+      timerCount -= 5;
+    }
+
     // Will apply colored background from game css to show visually if correct or incorrect //
     selectedChoice.parentElement.classList.add(classToApply);
 
@@ -125,11 +144,17 @@ choices.forEach(choice => {
   });
 });
 
+function convertSeconds(s) {
+  const minutes = Math.floor(s / 60);
+  const seconds = s % 60;
+  return minutes + ":" + seconds;
+};
+
 // Display score of user //
 incrementScore = num => {
   score += num;
   scoreText.innerText = score;
-}
+};
 
 // Calls startGame function //
 startGame();
