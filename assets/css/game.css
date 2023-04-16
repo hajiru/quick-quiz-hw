@@ -34,3 +34,19 @@
 .incorrect {
   background-color: lightcoral;
 }
+
+/* For da HUD */
+
+#hud {
+  display: flex;
+  justify-content: center;
+}
+
+.hud-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hud-main-text {
+  text-align: center;
+}
